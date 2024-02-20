@@ -1,0 +1,76 @@
+{
+  "name": "doctoralia-ui",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "angular-monorepo",
+  "sourceRoot": "apps/doctoralia-ui/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/doctoralia-ui",
+        "index": "apps/doctoralia-ui/src/index.html",
+        "browser": "apps/doctoralia-ui/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/doctoralia-ui/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/doctoralia-ui/src/favicon.ico",
+          "apps/doctoralia-ui/src/assets"
+        ],
+        "styles": ["apps/doctoralia-ui/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "doctoralia-ui:build:production"
+        },
+        "development": {
+          "buildTarget": "doctoralia-ui:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "doctoralia-ui:build"
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "doctoralia-ui:build",
+        "staticFilePath": "dist/apps/doctoralia-ui/browser"
+      }
+    }
+  }
+}
