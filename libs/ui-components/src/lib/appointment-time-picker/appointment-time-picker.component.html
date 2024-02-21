@@ -1,0 +1,44 @@
+<div class="appointment-date-picker">
+    <span class="title">Did you have an unexpected situation?</span>
+    <span class="subtitle">You can change the appointment for when it suits you better</span>
+    <div class="area">
+        <ul class="date-picker" [ngClass]="{ 'time-expanded': isExpanded }">
+            @for (day of nextDays; track day) {
+            <li class="day">
+                <div class="header">
+                    <span class="weekday">{{ day | appointmentHeaderDate }} </span>
+                    <span class="date">{{ day | appointmentHeaderWeekday }}</span>
+                </div>
+                @for (availability of availabilities?.get(day)?.times; track availability.date + availability.start) {
+                <div class="times">
+                    <span class="time" (click)="selectTime(availability)" [ngClass]="{
+                                            'unavailable': availability.taken,
+                                            'available': !availability.taken,
+                                            'selected':
+                                                timeSelected()?.date === day &&
+                                                timeSelected()?.start === availability.start &&
+                                                !availability.taken
+                                            }">
+                        {{ availability.start.slice(0, 5) }}
+                    </span>
+                </div>
+                }
+            </li>
+            }
+        </ul>
+        <div class="divider"></div>
+        <span class="see-more-less" (click)="isExpanded = !isExpanded">
+            {{ isExpanded ? 'See less hours ∧' : 'See more hours ∨' }}
+        </span>
+    </div>
+</div>
+
+@if (timeSelected()) {
+<div class="reschedule">
+    <span class="title">Reschedule</span>
+    <span class="subtitle">Click the button to confirm</span>
+    <button type="button" class="btn" (click)="updateAppointment()">
+        {{ timeSelected()! | appointmentSelectedDate }}
+    </button>
+</div>
+}

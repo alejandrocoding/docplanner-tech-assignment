@@ -1,8 +1,11 @@
 {
-  "name": "@angular-monorepo/source",
+  "name": "@doctoralia-ui/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build": "npx nx run doctoralia-ui:build --configuration=development",
+    "start": "npx nx run doctoralia-ui:serve --configuration=development"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~17.1.0",
@@ -43,6 +46,7 @@
     "@types/node": "18.16.9",
     "@typescript-eslint/eslint-plugin": "^6.13.2",
     "@typescript-eslint/parser": "^6.13.2",
+    "autoprefixer": "^10.4.0",
     "cypress": "^13.0.0",
     "eslint": "~8.48.0",
     "eslint-config-prettier": "^9.0.0",
@@ -51,7 +55,10 @@
     "jest-environment-jsdom": "^29.4.1",
     "jest-preset-angular": "~13.1.4",
     "jsonc-eslint-parser": "^2.1.0",
+    "ng-packagr": "~17.1.0",
     "nx": "18.0.4",
+    "postcss": "^8.4.5",
+    "postcss-url": "~10.1.3",
     "prettier": "^2.6.2",
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",

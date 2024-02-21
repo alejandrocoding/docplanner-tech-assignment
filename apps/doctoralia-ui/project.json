@@ -2,25 +2,31 @@
   "name": "doctoralia-ui",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "prefix": "angular-monorepo",
+  "prefix": "doctoralia",
   "sourceRoot": "apps/doctoralia-ui/src",
   "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/doctoralia-ui",
         "index": "apps/doctoralia-ui/src/index.html",
         "browser": "apps/doctoralia-ui/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/doctoralia-ui/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           "apps/doctoralia-ui/src/favicon.ico",
           "apps/doctoralia-ui/src/assets"
         ],
-        "styles": ["apps/doctoralia-ui/src/styles.scss"],
+        "styles": [
+          "apps/doctoralia-ui/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {

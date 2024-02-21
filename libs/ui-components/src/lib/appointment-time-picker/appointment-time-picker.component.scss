@@ -1,0 +1,121 @@
+$primary-bg-color: #eff4fd;
+
+.appointment-date-picker {
+    display: flex;
+    flex-direction: column;
+    .title {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    .subtitle {
+        margin-bottom: 25px;
+    }
+    .area {
+        padding: 16px;
+        background-color: white;
+        border-radius: 6px;
+        box-shadow:
+            0 0px 1px rgba(0, 0, 0, 0.12),
+            0 0px 2px rgba(0, 0, 0, 0.24);
+        .date-picker {
+            list-style: none;
+            margin: 0;
+            padding: 10px 50px;
+            display: flex;
+            flex-direction: row;
+            overflow: hidden;
+            max-height: 240px;
+            transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+            .day {
+                min-width: 80px;
+                padding: 0 20px;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                .header {
+                    display: flex;
+                    flex-direction: column;
+                    .weekday {
+                        margin-bottom: 2px;
+                    }
+                    .date {
+                        font-size: 13px;
+                        margin-bottom: 15px;
+                        opacity: 0.5;
+                    }
+                }
+                .times {
+                    display: flex;
+                    flex-direction: column;
+                    .time {
+                        padding: 8px;
+                        font-size: 14px;
+                        margin: 6px;
+                        border-radius: 3px;
+                        cursor: pointer;
+                        user-select: none;
+                    }
+                    .available {
+                        color: var(--primary-font-color);
+                        background-color: $primary-bg-color;
+                        &:hover:not(.selected) {
+                            background-color: darken($primary-bg-color, 5%);
+                        }
+                    }
+                    .unavailable {
+                        text-decoration: line-through;
+                        opacity: 0.25;
+                        cursor: default;
+                        pointer-events: none;
+                    }
+                    .selected {
+                        color: white;
+                        background-color: darken($primary-bg-color, 50%);
+                    }
+                }
+            }
+        }
+    }
+    .see-more-less {
+        display: flex;
+        justify-content: center;
+        font-size: 14px;
+        color: var(--primary-font-color);
+        cursor: pointer;
+    }
+}
+
+.divider {
+    border-bottom: 1px solid #eee;
+    margin: 24px 0 16px 0;
+}
+
+.time-expanded {
+    max-height: 9999px !important;
+    transition: max-height 1.5s ease-in-out !important;
+}
+
+.reschedule {
+    display: flex;
+    flex-direction: column;
+    margin-top: 36px;
+    .title {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    .subtitle,
+    .btn {
+        margin-bottom: 36px;
+    }
+    .btn {
+        color: white;
+        background-color: darken($primary-bg-color, 50%);
+        padding: 12px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        &:hover {
+            background-color: darken($primary-bg-color, 60%);
+        }
+    }
+}

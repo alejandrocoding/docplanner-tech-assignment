@@ -1,2 +1,11 @@
-<angular-monorepo-nx-welcome></angular-monorepo-nx-welcome>
-<router-outlet></router-outlet>
+<main class="container">
+    <div class="doctor-info">
+        <span class="info">Confirm your appointment with <strong>{{ doctorName() }}</strong>
+        </span>
+    </div>
+    <doctoralia-appointment-time-info [isUpdating]="isUpdating()" [timeSelected]="timeSelected()" />
+    <doctoralia-appointment-time-picker [availabilities]="(availabilities$ | async)!" [timeSelected]="highlightedTime"
+        (updateAppointmentEvt)="updateAppointment($event)" />
+</main>
+
+<doctoralia-footer />

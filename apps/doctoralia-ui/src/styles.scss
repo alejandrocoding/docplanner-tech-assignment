@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+html,
+body {
+    margin: 0 auto;
+    padding: 0;
+    font-family: Tahoma, sans-serif;
+    font-size: 16px;
+    min-height: 100vh;
+    width: 100%;
+    max-width: 100vw;
+    display: flex;
+    color: #222;
+    background-color: #eee;
+}
+
+:root {
+    --primary-font-color: #1860c0;
+    --primary-bg-color: #eff4fd;
+}

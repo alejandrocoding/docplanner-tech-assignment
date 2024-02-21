@@ -1,0 +1,67 @@
+$primary-bg-color: #eff4fd;
+
+.appointment-info {
+  display: flex;
+  padding: 16px;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow:
+    0 0px 1px rgba(0, 0, 0, 0.12),
+    0 0px 2px rgba(0, 0, 0, 0.24);
+
+  margin-bottom: 36px;
+  .calendar-icon,
+  .circular-loader {
+    width: 22px;
+  }
+  .date {
+    margin-left: 12px;
+  }
+  .updating {
+    text-decoration: line-through;
+    opacity: 0.7;
+  }
+
+  .circular-loader {
+    animation: 2s linear infinite svg-animation;
+    max-width: 100px;
+    circle {
+      animation: 1.4s ease-in-out infinite both circle-animation;
+      display: block;
+      fill: transparent;
+      stroke: darken($primary-bg-color, 60%);
+      stroke-linecap: round;
+      stroke-dasharray: 283;
+      stroke-dashoffset: 280;
+      stroke-width: 10px;
+      transform-origin: 50% 50%;
+    }
+  }
+}
+
+@keyframes svg-animation {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes circle-animation {
+  0%,
+  25% {
+    stroke-dashoffset: 280;
+    transform: rotate(0);
+  }
+
+  50%,
+  75% {
+    stroke-dashoffset: 75;
+    transform: rotate(45deg);
+  }
+
+  100% {
+    stroke-dashoffset: 280;
+    transform: rotate(360deg);
+  }
+}
