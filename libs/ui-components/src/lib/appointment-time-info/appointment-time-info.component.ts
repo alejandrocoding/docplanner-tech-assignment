@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import {
   AppointmentSelectedDatePipe,
   TimeAvailable,
-} from '@doctoralia/ui-data';
+} from '@doctoralia-ui/ui-data';
 
 @Component({
   selector: 'doctoralia-appointment-time-info',

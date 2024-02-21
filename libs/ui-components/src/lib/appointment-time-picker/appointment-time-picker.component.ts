@@ -14,7 +14,7 @@ import {
   AppointmentSelectedDatePipe,
   TimeAvailable,
   getNextDays,
-} from '@doctoralia/ui-data';
+} from '@doctoralia-ui/ui-data';
 
 @Component({
   selector: 'doctoralia-appointment-time-picker',

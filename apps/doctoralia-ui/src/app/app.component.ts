@@ -2,12 +2,12 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { toObservable } from '@angular/core/rxjs-interop';
 
-import { AvailabilityService, TimeAvailable } from '@doctoralia/ui-data';
+import { AvailabilityService, TimeAvailable } from '@doctoralia-ui/ui-data';
 import {
   AppointmentTimeInfoComponent,
   AppointmentTimePickerComponent,
   FooterComponent,
-} from '@doctoralia/ui-components';
+} from '@doctoralia-ui/ui-components';
 import { delay, finalize, switchMap } from 'rxjs';
 
 @Component({
