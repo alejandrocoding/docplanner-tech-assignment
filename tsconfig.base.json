@@ -15,8 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@doctoralia/ui-data": ["libs/ui-data/src/index.ts"],
-      "@doctoralia/ui-components": ["libs/ui-components/src/index.ts"]
+      "@doctoralia-ui/ui-data": ["libs/ui-data/src/index.ts"],
+      "@doctoralia-ui/ui-components": ["libs/ui-components/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
